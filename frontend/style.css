@@ -1,0 +1,129 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+#chatbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+/* Chat Button */
+#chatbot-toggle {
+  background-color: #0078D4;
+  border: none;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.chat-icon {
+  width: 32px;
+  height: 32px;
+}
+
+/* Chat Window */
+.chatbox {
+  width: 320px;
+  height: 440px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  overflow: hidden;
+  animation: fadeInUp 0.3s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hidden {
+  display: none;
+}
+
+.chat-header {
+  background: #0078D4;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#chatlog {
+  flex-grow: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Chat Messages */
+.chat-message {
+  margin-bottom: 8px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  max-width: 85%;
+  word-wrap: break-word;
+}
+
+/* User Message */
+.user-message {
+  background-color: #f0f0f0;
+  color: #0078D4;
+  align-self: flex-end;
+  text-align: right;
+  margin-left: auto;
+}
+
+/* Bot Message */
+.bot-message {
+  background-color: #0078D4;
+  color: white;
+  align-self: flex-start;
+  text-align: left;
+  margin-right: auto;
+}
+
+/* Chat Input Form */
+#chat-form {
+  display: flex;
+  border-top: 1px solid #ccc;
+}
+
+#user-input {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  font-size: 14px;
+}
+
+#chat-form button {
+  background: #0078D4;
+  color: white;
+  border: none;
+  padding: 0 15px;
+  cursor: pointer;
+  font-size: 16px;
+}
